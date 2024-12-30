@@ -157,7 +157,20 @@ It requires [jQuery UI](http://jqueryui.com/) in order to use any other transiti
 
 - `keyboardScrolling`: (default `true`) Defines if the content can be navigated using the keyboard
 
-- `touchSensitivity`: (default `5`) Defines a percentage of the browsers window width/height, and how far a swipe must measure for navigating to the next section.
+- `touchSensitivity`: (default `5`) Defines a percentage of the browsers window width/height, and how far a swipe must measure for navigating to the next section - *IMPROTANT* If you want this to work then make sure you set height: 100%(or your prefered height) on mobile to the element on which you applied pagePilling to for exmaple:
+	```javascript
+	$('#pagepiling').pagepiling({
+	        scrollingSpeed: 1000,
+		touchSensitivity: 8,
+	});
+	```
+	then you have to set:
+	```css
+	#pagepiling {
+		height: 100%
+	}
+	```
+
 
 - `animateAnchor`: (default `true`) Defines whether the load of the site when given an anchor (#) will scroll with animation to its destination or will directly load on the given section.
 
